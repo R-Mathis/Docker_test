@@ -1,6 +1,13 @@
 FROM python:3.9
-WORKDIR /app
-COPY . /app
-COPY requirements.txt .
-RUN python -m pip install -r requirements.txt
-CMD [ "python" , "Testing.py"]
+
+WORKDIR /code
+
+COPY ./requirements.txt /code/requirements.txt
+
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+
+# 
+COPY ./Testing.py /code/
+
+# 
+CMD ["uvicorn", "Testing:app","--host","0.0.0.0","--reload"]

@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 
-import uvicorn
-
 app=FastAPI()
 @app.get("/")
 def main():
     return{"Hello' world"}
 
-uvicorn.run(app)
+@app.get("/{medicament}")
+def medicaments(medicament:str):
+    return{"le nom du medicament est": medicament}
