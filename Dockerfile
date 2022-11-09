@@ -10,4 +10,4 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 COPY ./Testing.py /code/
 
 # 
-CMD ["uvicorn", "Testing:app","--host","0.0.0.0"]
+CMD ["uvicorn", "Testing:app","--host","0.0.0.0","--reload"]
