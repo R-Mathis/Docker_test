@@ -1,0 +1,10 @@
+version: '3.6'
+services:
+  app:
+    restart: always
+    image: naramazuki/api_dockerfile_cluster:3
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - ${APP_PORT}:${APP_PORT}
