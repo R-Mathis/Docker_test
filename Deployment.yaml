@@ -1,0 +1,25 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app
+spec:
+  selector:
+    matchLabels:
+      app: app
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      nodeName: k3d-mycluster-agent-0
+
+      containers:
+        - name: app
+          image: naramazuki/api_dockerfile_cluster:3
+          imagePullPolicy: Always
+          env:
+            - name: APP_PORT
+              value: "7001"
+      
