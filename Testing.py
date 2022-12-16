@@ -15,5 +15,5 @@ def medicaments(medicament:str):
     return{"le nom du medicament est": medicament}
 
 if __name__=="__main__":
-    app_port = int(os.getenv('APP_PORT', 9000))
+    app_port = int(os.getenv('APP_PORT', 8080))
     uvicorn.run(app, host="0.0.0.0", port=app_port)
