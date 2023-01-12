@@ -1,3 +1,8 @@
 
 uvicorn
 fastapi
+cloud-sql-python-connector
+google-cloud-secret-manager
+python-dotenv
+sqlalchemy
+pg8000
